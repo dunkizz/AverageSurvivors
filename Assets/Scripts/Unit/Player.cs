@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : Unit
 {
-    private Unit[] units;
+    private Unit units;
     [Header("Dashing")]
     [SerializeField]private bool canDash = true;
     [SerializeField]private float dashingSpeed = 100f;
@@ -14,6 +14,7 @@ public class Player : Unit
     // Start is called before the first frame update
     void Start()
     {
+        units = GetComponent<Unit>();
         rb = GetComponent<Rigidbody>();
         dashTrail.emitting = false;
     }
@@ -53,7 +54,7 @@ public class Player : Unit
         }
 
         // Move the character
-        transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(movement * units.MoveSpeed * Time.deltaTime, Space.World);
         
         
     }
