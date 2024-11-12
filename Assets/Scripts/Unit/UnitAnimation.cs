@@ -23,6 +23,7 @@ public class UnitAnimation : MonoBehaviour
         anim.SetBool("IsIdle", false);
         anim.SetBool("IsMove", false);
         anim.SetBool("IsAttack", false);
+        anim.SetBool("IsDashing",false);
 
         switch (u.State)
         {
@@ -34,6 +35,9 @@ public class UnitAnimation : MonoBehaviour
                 break;
             case UnitState.Attack:
                 anim.SetBool("IsAttack", true);
+                break;
+            case UnitState.Dashing:
+                anim.SetBool("IsDashing", true);
                 break;
         }
     }

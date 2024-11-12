@@ -6,6 +6,7 @@ public enum UnitState
 {
     Idle,
     Moving,
+    Dashing,
     Die,
     Attack
 }
@@ -16,6 +17,8 @@ public class Unit : MonoBehaviour
     [SerializeField]protected string name;
     [SerializeField]protected string type;
     [SerializeField]private UnitState state;
+    [SerializeField]protected Rigidbody rb;
+    
     public UnitState State { get { return state; } set { state = value; } }
     //status = hp,defense,cri,movespeed
     [Header("Status")]
@@ -31,7 +34,7 @@ public class Unit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
