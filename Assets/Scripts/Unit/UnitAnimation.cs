@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UnitAnimation : MonoBehaviour
 {
+    
     private Animator anim;
     private Unit unit;
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class UnitAnimation : MonoBehaviour
         anim.SetBool("IsMove", false);
         anim.SetBool("IsAttack", false);
         anim.SetBool("IsDashing",false);
+        anim.SetInteger("attackInt",0);
 
         switch (u.State)
         {

@@ -22,7 +22,7 @@ public class Weapon : Item
     void Update()
     {
         ModelMatchId(Id);
-        StatPlusToPlayer();
+        //StatPlusToPlayer();
         IdStatWeapon();
     }
 
@@ -37,14 +37,20 @@ public class Weapon : Item
     {
         switch (Id)
         {
+            //knife
             case 0:
+                Name = "Knife";
+                Type = "Weapon";
                 damage = 5f;
                 range = 5f;
                 speed = 5f;
                 critChance = 5f;
                 heavyAttackChance = 5f;
                 break;
+            //sword
             case 1:
+                Name = "Sword";
+                Type = "Weapon";
                 damage = 10f;
                 range = 10f;
                 speed = 10f;

@@ -53,7 +53,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 12
+    value: -3
   tint:
     overrideState: 0
     value: 0
@@ -65,16 +65,16 @@ MonoBehaviour:
     value: 6
   saturation:
     overrideState: 1
-    value: -3
+    value: 3
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: 0.25
+    value: -0.09
   contrast:
     overrideState: 1
-    value: -8
+    value: 1
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -83,7 +83,7 @@ MonoBehaviour:
     value: 0
   mixerRedOutBlueIn:
     overrideState: 0
-    value: 0
+    value: 9
   mixerGreenOutRedIn:
     overrideState: 0
     value: 0
@@ -104,13 +104,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: -0.2587322}
+    value: {x: 1, y: 1, z: 1, w: -0.47865462}
   gamma:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: 0.14230283}
+    value: {x: 1, y: 1, z: 1, w: -0.06468295}
   gain:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: -0.28460547}
+    value: {x: 1, y: 1, z: 1, w: 0.33635196}
   masterCurve:
     overrideState: 0
     value:
@@ -1355,10 +1355,10 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.38
+    value: 0.26
   smoothness:
     overrideState: 1
-    value: 0.322
+    value: 0.38
   roundness:
     overrideState: 0
     value: 1
@@ -1390,10 +1390,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 3.04
+    value: 2.04
   threshold:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 1.48
   softKnee:
     overrideState: 0
     value: 0.5
@@ -1440,7 +1440,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.51
+    value: 0.38
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1458,7 +1458,7 @@ MonoBehaviour:
     value: -12
   thicknessModifier:
     overrideState: 1
-    value: 4.68
+    value: 4.59
   zBias:
     overrideState: 0
     value: 0.0001

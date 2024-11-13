@@ -8,7 +8,9 @@ public class Item : MonoBehaviour
     [SerializeField]private int id;
     public int Id { get { return id; } set { id = value; } }
     [SerializeField]private string name;
+    public string Name { get { return name; } set { name = value; } }
     [SerializeField]private string type;
+    public string Type { get { return type; } set { type = value; } }
     [SerializeField]private GameObject[] model;
     // Start is called before the first frame update
     void Start()

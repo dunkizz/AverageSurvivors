@@ -5,15 +5,23 @@ using UnityEngine;
 public class Player : Unit
 {
     private Unit units;
+    [Header("Attack")]
+    [SerializeField]private int maxHit = 4;
+    private int hitCount;
+    public int HitCount { get { return hitCount; } set { hitCount = value; } }
+    private Animator anim;
+    
     [Header("Dashing")]
     [SerializeField]private bool canDash = true;
     [SerializeField]private float dashingSpeed = 100f;
     [SerializeField]private float dashingDuration = 0.3f;
     [SerializeField]private float dashingCooldown = 0.65f;
     [SerializeField]private TrailRenderer dashTrail;
+    
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         units = GetComponent<Unit>();
         rb = GetComponent<Rigidbody>();
         dashTrail.emitting = false;
@@ -23,13 +31,30 @@ public class Player : Unit
     void Update()
     {
         PlayerAttack();
-        PlayerMovement();
-        Dashing();
+        if (hitCount == 0)
+        {
+            PlayerMovement();
+            Dashing();
+        }
+        
     }
 
     void PlayerAttack()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            SetState(UnitState.Attack);
+            hitCount++;
+            anim.SetInteger("attackInt", hitCount);
+            StartCoroutine(attackDuration());
+            
+            Debug.Log($"Hit : {hitCount}");
+            if (hitCount >= maxHit)
+            {
+                anim.SetInteger("attackInt",0);
+                hitCount = 0;
+            }
+        }
     }
 
     void PlayerMovement()
@@ -73,7 +98,7 @@ public class Player : Unit
         canDash = false;
         dashTrail.emitting = true;
         
-        rb.AddForce(transform.forward * dashingSpeed, ForceMode.Impulse);
+        rb.AddForce(transform.forward.normalized * dashingSpeed, ForceMode.Impulse);
         
         yield return new WaitForSeconds(dashingDuration);
         rb.velocity = Vector3.zero;
@@ -81,5 +106,14 @@ public class Player : Unit
         
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+    }
+
+    private IEnumerator attackDuration()
+    {
+        if (hitCount != hitCount+1)
+        {
+            yield return new WaitForSeconds(2);
+            hitCount = 0;
+        }
     }
 }
