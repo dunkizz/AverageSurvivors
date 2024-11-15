@@ -15227,7 +15227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1329045729}
-  - component: {fileID: 1329045728}
+  - component: {fileID: 1329045730}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -15235,26 +15235,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1329045728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329045727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838556d36a2ea914cb320095e0ba2d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemToSpawn: []
-  enemyToSpawn: []
-  itemSpawn: 0
-  itemDropRate: 0
-  itemIdToSpawn: 0
-  enemySpawn: 0
-  enemyIdToSpawn: 0
-  spawnCount: 0
 --- !u!4 &1329045729
 Transform:
   m_ObjectHideFlags: 0
@@ -15270,6 +15250,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1329045730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329045727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356a3c852cf1ec742a24439df12e3639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToSpawn: []
+  enemiesToSpawn: []
+  spawnItem: 0
+  itemIdToSpawn: 0
+  itemSpawnAmount: 0
+  itemDropRate: 0
+  spawnEnemies: 0
+  enemiesIdToSpawn: 0
+  enemiesSpawnAmount: 0
 --- !u!1001 &1332194607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23834,7 +23835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: version 0.1.3
+  m_text: version 0.1.4.5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -23949,7 +23950,6 @@ MonoBehaviour:
   moveSpeed: 0
   heavyAttackChance: 0
   inHand_Item: {fileID: 0}
-  id: 0
 --- !u!1001 &3654389826080771907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24002,6 +24002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KEKE_ENEMY
       objectReference: {fileID: 0}
+    - target: {fileID: 6386303324265168944, guid: e1b37bf14abab9941a9fcadf15ab411f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3af6993859af4e647a1f60cb1fee8908, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
