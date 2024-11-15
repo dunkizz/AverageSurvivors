@@ -54,10 +54,6 @@ public class Unit : MonoBehaviour
         
     }
 
-    void animation()
-    {
-        
-    }
     public void SetState(UnitState toState)
     {
         state = toState;
