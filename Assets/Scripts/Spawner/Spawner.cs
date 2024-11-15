@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [Header("Prefabs")]
-    [SerializeField]private GameObject[] itemToSpawn;
+    [SerializeField]private GameObject[] itemsToSpawn;
     [SerializeField]private GameObject[] enemiesToSpawn;
 
     [Header("Item Spawn")] 
@@ -44,11 +44,27 @@ public class Spawner : MonoBehaviour
 
     void SpawnItem()
     {
-        
+        for (int i = 0; i < itemSpawnAmount; i++)
+        {
+            Instantiate(itemsToSpawn[itemIdToSpawn], transform.position, Quaternion.identity);
+            Debug.Log($"Item {itemIdToSpawn} spawned : {i} ");
+            if (i == itemSpawnAmount-1)
+            {
+                spawnItem = false;
+            }
+        }
     }
 
     void SpawnEnemies()
     {
-        
+        for (int i = 0; i < enemiesSpawnAmount; i++)
+        {
+            Instantiate(enemiesToSpawn[enemiesIdToSpawn], transform.position, Quaternion.identity);
+            Debug.Log($"Enemy {enemiesIdToSpawn} spawned : {i} ");
+            if (i == enemiesSpawnAmount-1)
+            {
+                spawnEnemies = false;
+            }
+        }
     }
 }
