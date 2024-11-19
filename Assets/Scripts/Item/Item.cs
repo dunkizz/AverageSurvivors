@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemType
+{
+    Item,
+    Weapon,
+    Currency,
+    Usable
+}
 public class Item : MonoBehaviour
 {
     [Header("Item")] 
@@ -9,8 +16,8 @@ public class Item : MonoBehaviour
     public int Id { get { return id; } set { id = value; } }
     [SerializeField]private string name;
     public string Name { get { return name; } set { name = value; } }
-    [SerializeField]private string type;
-    public string Type { get { return type; } set { type = value; } }
+    [SerializeField]private ItemType type;
+    public ItemType Type { get { return type; } set { type = value; } }
     [SerializeField]private GameObject[] model;
     // Start is called before the first frame update
     void Start()
@@ -39,5 +46,9 @@ public class Item : MonoBehaviour
         {
             Debug.LogWarning("Model ID is out of range.");
         }
+    }
+    public void SetType(ItemType toType)
+    {
+        type = toType;
     }
 }

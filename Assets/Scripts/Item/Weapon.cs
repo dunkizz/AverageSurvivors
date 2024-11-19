@@ -40,7 +40,7 @@ public class Weapon : Item
             //knife
             case 0:
                 Name = "Knife";
-                Type = "Weapon";
+                SetType(ItemType.Weapon);
                 damage = 5f;
                 range = 5f;
                 speed = 5f;
@@ -50,7 +50,7 @@ public class Weapon : Item
             //sword
             case 1:
                 Name = "Sword";
-                Type = "Weapon";
+                SetType(ItemType.Weapon);
                 damage = 10f;
                 range = 10f;
                 speed = 10f;

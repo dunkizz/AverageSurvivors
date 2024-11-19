@@ -1,21 +1,23 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class TimeSystem : MonoBehaviour
 {
     [Header("TimeSettings")]
     [SerializeField]private Light directionalLight;
+    [SerializeField]private TextMeshProUGUI timerText;
+    [SerializeField]private TextMeshProUGUI timeDescriptionText;
     [SerializeField]private bool isDay;
     [SerializeField]private float timer;
     [Header("Day Time")]
     [SerializeField]private float dayIntensity;
-    [SerializeField]private int dMin;
+    //[SerializeField]private int dMin;
     [SerializeField]private float dSec;
     [Header("Night Time")] 
     [SerializeField]private float nightIntensity;
-    [SerializeField]private int nMin;
+    //[SerializeField]private int nMin;
     [SerializeField]private float nSec;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Timer();
+        
+        //Clock
+        if (isDay)
+        {
+            SecToMin(dSec - timer); // Countdown for day time
+        }
+        else
+        {
+            SecToMin(nSec - timer); // Countdown for night time
+        }
     }
 
     void Timer()
@@ -58,6 +70,27 @@ public class GameManager : MonoBehaviour
                 isDay = true;
             }
         }
+    }
+    
+
+    void SecToMin(float sec)
+    {
+        
+        int minutes = (int)(sec / 60);
+        int remainingSeconds = (int)(sec % 60);
+        
+        //set text time
+        timerText.text = $"{minutes:D2}:{remainingSeconds:D2}";
+        //set text desc
+        if (isDay)
+        {
+            timeDescriptionText.text = "Before Night";
+        }
+        else
+        {
+            timeDescriptionText.text = "Before Dawn";
+        }
+        Debug.Log($"TimeLeft: {minutes}:{remainingSeconds}");
     }
 
     
