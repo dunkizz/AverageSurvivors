@@ -90,7 +90,7 @@ public class TimeSystem : MonoBehaviour
         {
             timeDescriptionText.text = "Before Dawn";
         }
-        Debug.Log($"TimeLeft: {minutes}:{remainingSeconds}");
+        //Debug.Log($"TimeLeft: {minutes:D2}:{remainingSeconds:D2}");
     }
 
     

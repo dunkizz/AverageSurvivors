@@ -44,6 +44,7 @@ public class Player : Unit
         if (Input.GetMouseButtonDown(0))
         {
             SetState(UnitState.Attack);
+            
             hitCount++;
             anim.SetInteger("attackInt", hitCount);
             StartCoroutine(attackDuration());
