@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.WSA;
 
 public enum CurrencyType
 {
@@ -16,6 +17,7 @@ public class Currency : Item
     private bool isGrounded;
     [Header("Currency")]
     [SerializeField]private CurrencyType currencyType;
+    public CurrencyType CurrencyType { get { return currencyType; } set { currencyType = value; } }
     // Start is called before the first frame update
     void Start()
     {
@@ -44,32 +46,24 @@ public class Currency : Item
         switch (Id)
         {
             case 0:
+                Name = "Gold";
                 SetCurrency(CurrencyType.Gold);
+                SetType(ItemType.Currency);
                 break;
             case 1:
+                Name = "Wood";
                 SetCurrency(CurrencyType.Wood);
+                SetType(ItemType.Currency);
                 break;
             case 2:
+                Name = "Rock";
                 SetCurrency(CurrencyType.Rock);
+                SetType(ItemType.Currency);
                 break;
         }
     }
     public void SetCurrency(CurrencyType toCurrency)
     {
         currencyType = toCurrency;
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            switch (Id)
-            {
-                case 0:
-                    currencyManager.Gold += 1;
-                    Destroy(gameObject);
-                    break;
-            }
-        }
     }
 }

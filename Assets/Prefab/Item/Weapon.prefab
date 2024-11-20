@@ -50,12 +50,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   name: 
-  type: 
+  type: 0
   model:
   - {fileID: 4228748693658722926}
   - {fileID: 7954240316188125745}
   - {fileID: 2931270312966076595}
   - {fileID: 8633647354991932942}
+  hitBoxes:
+  - {fileID: 939016359081730463}
+  - {fileID: 7136979834560626762}
+  - {fileID: 8172941372319137225}
+  - {fileID: 4939133002210239988}
   units: {fileID: 0}
   damage: 0
   range: 0
@@ -119,6 +124,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ef1dc2e7819fb849b44dc0955f64db7, type: 3}
+--- !u!65 &939016359081730463 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: -5768397482185626170, guid: 1ef1dc2e7819fb849b44dc0955f64db7, type: 3}
+  m_PrefabInstance: {fileID: 2520475831177415769}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3595095317065545940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1377784065294677133, guid: 1ef1dc2e7819fb849b44dc0955f64db7, type: 3}
@@ -200,6 +210,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2220497613814394647, guid: accda685df97034478f570f462648f91, type: 3}
   m_PrefabInstance: {fileID: 3926360425548994468}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &8172941372319137225 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5120912602600516205, guid: accda685df97034478f570f462648f91, type: 3}
+  m_PrefabInstance: {fileID: 3926360425548994468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5263344179935677399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -261,6 +276,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c3cf9ea5ffd7974180ede6aa73fa7a3, type: 3}
+--- !u!65 &7136979834560626762 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3026562975142202269, guid: 1c3cf9ea5ffd7974180ede6aa73fa7a3, type: 3}
+  m_PrefabInstance: {fileID: 5263344179935677399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7289344002905321611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3180619292872031068, guid: 1c3cf9ea5ffd7974180ede6aa73fa7a3, type: 3}
@@ -332,6 +352,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b94933a7038c45a4e9339903ab45489d, type: 3}
+--- !u!65 &4939133002210239988 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1014813457220033920, guid: b94933a7038c45a4e9339903ab45489d, type: 3}
+  m_PrefabInstance: {fileID: 5376739667612055668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8633647354991932942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4417719777104776826, guid: b94933a7038c45a4e9339903ab45489d, type: 3}

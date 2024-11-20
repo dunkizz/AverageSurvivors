@@ -54,6 +54,12 @@ MonoBehaviour:
   - {fileID: 2315551299738991546}
   - {fileID: 4695711854250051254}
   - {fileID: 1983236473756290135}
+  hitBoxes:
+  - {fileID: 657654697850758133}
+  - {fileID: 1662956490502010938}
+  - {fileID: 7003507040839233663}
+  currencyManager: {fileID: 0}
+  currencyType: 0
 --- !u!1001 &2498116845315495660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,6 +124,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4120449622359710395, guid: 22f3bcf66ec2bac4c838d7deaeffe7d5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7003507040839233663}
+    - targetCorrespondingSourceObject: {fileID: 4120449622359710395, guid: 22f3bcf66ec2bac4c838d7deaeffe7d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4837305723688637653}
   m_SourcePrefab: {fileID: 100100000, guid: 22f3bcf66ec2bac4c838d7deaeffe7d5, type: 3}
 --- !u!4 &1421821099390580669 stripped
 Transform:
@@ -150,6 +159,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.186585, y: 2.505666, z: 1.7212362}
   m_Center: {x: -0.0070967674, y: 1.2049233, z: 0.050229996}
+--- !u!114 &4837305723688637653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983236473756290135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbb3e4094ded594fabd68f6b84af3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currency: {fileID: 4958681455523408938}
+  currencyManager: {fileID: 0}
+  parent: {fileID: 8359972063330142840}
 --- !u!1001 &6963639765177536820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -214,6 +238,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2416555539822237570, guid: 306544bc4155a364bada911ea66d2f40, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1662956490502010938}
+    - targetCorrespondingSourceObject: {fileID: 2416555539822237570, guid: 306544bc4155a364bada911ea66d2f40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4161298901301149145}
   m_SourcePrefab: {fileID: 100100000, guid: 306544bc4155a364bada911ea66d2f40, type: 3}
 --- !u!4 &825876461093982073 stripped
 Transform:
@@ -246,6 +273,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.927957, y: 1.0609536, z: 1.0596808}
   m_Center: {x: 0.0049319863, y: 0.0023505092, z: 0.0011054277}
+--- !u!114 &4161298901301149145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695711854250051254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbb3e4094ded594fabd68f6b84af3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currency: {fileID: 4958681455523408938}
+  currencyManager: {fileID: 0}
+  parent: {fileID: 8359972063330142840}
 --- !u!1001 &8801492772158056906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,6 +356,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6487244673139397232, guid: aca225e193b35344f935aca6b1c2f655, type: 3}
       insertIndex: -1
       addedObject: {fileID: 657654697850758133}
+    - targetCorrespondingSourceObject: {fileID: 6487244673139397232, guid: aca225e193b35344f935aca6b1c2f655, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5353257844684992265}
   m_SourcePrefab: {fileID: 100100000, guid: aca225e193b35344f935aca6b1c2f655, type: 3}
 --- !u!1 &2315551299738991546 stripped
 GameObject:
@@ -339,8 +384,23 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.6399999, y: 0.44, z: 2.5998926}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.6399999, y: 0.5856221, z: 2.5998926}
+  m_Center: {x: 0, y: -0.017404828, z: 0}
+--- !u!114 &5353257844684992265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315551299738991546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbb3e4094ded594fabd68f6b84af3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currency: {fileID: 4958681455523408938}
+  currencyManager: {fileID: 0}
+  parent: {fileID: 8359972063330142840}
 --- !u!4 &3128221696433234176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5858200170389604554, guid: aca225e193b35344f935aca6b1c2f655, type: 3}
