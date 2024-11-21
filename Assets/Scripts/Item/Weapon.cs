@@ -8,7 +8,6 @@ public class Weapon : Item
     [SerializeField]private Unit units;
     [Header("Weapon")] 
     [SerializeField]private float damage;
-    [SerializeField]private float range;
     [SerializeField]private float speed;
     [SerializeField]private float critChance;
     [SerializeField]private float heavyAttackChance;
@@ -42,7 +41,6 @@ public class Weapon : Item
                 Name = "Knife";
                 SetType(ItemType.Weapon);
                 damage = 5f;
-                range = 5f;
                 speed = 5f;
                 critChance = 5f;
                 heavyAttackChance = 5f;
@@ -52,7 +50,6 @@ public class Weapon : Item
                 Name = "Sword";
                 SetType(ItemType.Weapon);
                 damage = 10f;
-                range = 10f;
                 speed = 10f;
                 critChance = 10f;
                 heavyAttackChance = 10f;
