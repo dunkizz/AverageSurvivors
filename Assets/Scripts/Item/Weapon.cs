@@ -32,7 +32,7 @@ public class Weapon : Item
         units.HeavyAttackChance = units.HeavyAttackChance + heavyAttackChance;
     }
 
-    void IdStatWeapon()
+    public void IdStatWeapon()
     {
         switch (Id)
         {
