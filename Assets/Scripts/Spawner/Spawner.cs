@@ -5,65 +5,60 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [Header("Prefabs")]
-    [SerializeField]private GameObject[] itemsToSpawn;
-    [SerializeField]private GameObject[] enemiesToSpawn;
+    [SerializeField] private GameObject[] itemsToSpawn;
+    [SerializeField] private GameObject[] enemiesToSpawn;
 
     [Header("Item Spawn")] 
-    [SerializeField]private bool spawnItem;
-    [SerializeField]private int itemIdToSpawn;
-    [SerializeField]private int itemSpawnAmount;
-    [SerializeField]private float itemDropRate;
+    [SerializeField] private bool spawnItem;
+    [SerializeField] private int[] itemSpawnAmounts; // จำนวนที่กำหนดสำหรับแต่ละไอเท็มใน itemsToSpawn
 
     [Header("Enemies Spawn")] 
-    [SerializeField]private bool spawnEnemies;
-    [SerializeField] private int enemiesIdToSpawn;
-    [SerializeField] private int enemiesSpawnAmount;
-    
-    
-    
-    
-    // Start is called before the first frame update
+    [SerializeField] private bool spawnEnemies;
+    [SerializeField] private int[] enemiesSpawnAmounts; // จำนวนที่กำหนดสำหรับแต่ละศัตรู
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (spawnItem == true)
+        if (spawnItem)
         {
             SpawnItem();
+            spawnItem = false; // ปิดการ Spawn หลังทำงานเสร็จ
         }
 
-        if (spawnEnemies == true)
+        if (spawnEnemies)
         {
             SpawnEnemies();
+            spawnEnemies = false; // ปิดการ Spawn หลังทำงานเสร็จ
         }
     }
 
+    
     void SpawnItem()
     {
-        for (int i = 0; i < itemSpawnAmount; i++)
+        for (int i = 0; i < itemsToSpawn.Length; i++)
         {
-            Instantiate(itemsToSpawn[itemIdToSpawn], transform.position, Quaternion.identity);
-            Debug.Log($"Item {itemIdToSpawn} spawned : {i} ");
-            if (i == itemSpawnAmount-1)
+            int amountToSpawn = itemSpawnAmounts[i];
+            for (int j = 0; j < amountToSpawn; j++)
             {
-                spawnItem = false;
+                Instantiate(itemsToSpawn[i], transform.position, Quaternion.identity);
+                Debug.Log($"Spawned Item {i}: {j + 1}/{amountToSpawn}");
             }
         }
     }
 
     void SpawnEnemies()
     {
-        for (int i = 0; i < enemiesSpawnAmount; i++)
+        for (int i = 0; i < enemiesToSpawn.Length; i++)
         {
-            Instantiate(enemiesToSpawn[enemiesIdToSpawn], transform.position, Quaternion.identity);
-            Debug.Log($"Enemy {enemiesIdToSpawn} spawned : {i} ");
-            if (i == enemiesSpawnAmount-1)
+            int amountToSpawn = enemiesSpawnAmounts[i];
+            for (int j = 0; j < amountToSpawn; j++)
             {
-                spawnEnemies = false;
+                Instantiate(enemiesToSpawn[i], transform.position, Quaternion.identity);
+                Debug.Log($"Spawned Enemy {i}: {j + 1}/{amountToSpawn}");
             }
         }
     }

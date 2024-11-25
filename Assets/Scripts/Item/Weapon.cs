@@ -1,59 +1,64 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Weapon : Item
 {
-    
-    [SerializeField]private Unit units;
-    [Header("Weapon")] 
-    [SerializeField]private float damage;
-    [SerializeField]private float speed;
-    [SerializeField]private float critChance;
-    [SerializeField]private float heavyAttackChance;
+    [Header("Properties")]
+    [SerializeField]public WeaponData wepData;
+    [Header("User")]
+    [SerializeField]private Unit unit;
+    // Dictionary to store weapon data by ID
+
+    private void OnEnable()
+    {
+        PlusAndResetStat();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        units = FindObjectOfType<Player>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        ModelMatchId(Id);
-        //StatPlusToPlayer();
-        IdStatWeapon();
+        
+        //setActiveIfUsing();
+        matchItem();
     }
 
-    void StatPlusToPlayer()
+    void matchItem()
     {
-        units.Damage = units.Damage + damage;
-        units.CritChance = units.CritChance + critChance;
-        units.HeavyAttackChance = units.HeavyAttackChance + heavyAttackChance;
+        Id = wepData.weaponId;
+        Name = wepData.weaponName;
+        Type = wepData.weaponType;
     }
 
-    public void IdStatWeapon()
+    void PlusAndResetStat()
     {
-        switch (Id)
+        bool isReset = false;
+        //reset
+        if (isReset == false)
         {
-            //knife
-            case 0:
-                Name = "Knife";
-                SetType(ItemType.Weapon);
-                damage = 5f;
-                speed = 5f;
-                critChance = 5f;
-                heavyAttackChance = 5f;
-                break;
-            //sword
-            case 1:
-                Name = "Sword";
-                SetType(ItemType.Weapon);
-                damage = 10f;
-                speed = 10f;
-                critChance = 10f;
-                heavyAttackChance = 10f;
-                break;
+            unit.GetBasedStat();
+            isReset = true;
+        }
+        //plus
+        if (isReset == true)
+        {
+            unit.currentUnitDamage += wepData.damage;
+            unit.currentUnitCritChance += wepData.critChance;
+            unit.currentUnitHeavyAttackChance += wepData.heavyAtkChance;
         }
     }
+
+   
 }
+
+
+    
+

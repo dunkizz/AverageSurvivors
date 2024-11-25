@@ -23,7 +23,7 @@ public class Crafting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        weaponRef = GameObject.Find("Weapon").GetComponent<Weapon>();
+        //weaponRef = GameObject.Find("Weapon").GetComponent<Weapon>();
     }
 
     // Update is called once per frame

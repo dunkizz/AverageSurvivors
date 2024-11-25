@@ -28,7 +28,7 @@ public class Currency : Item
     void Update()
     {
         IdCurrency();
-        ModelMatchId(Id);
+        //ModelMatchId(Id);
     }
 
     private void StopMovingAfterGrounded()
@@ -65,5 +65,26 @@ public class Currency : Item
     public void SetCurrency(CurrencyType toCurrency)
     {
         currencyType = toCurrency;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            switch (CurrencyType)
+            {
+                case CurrencyType.Gold:
+                    currencyManager.Gold++;
+                    Destroy(gameObject);
+                    break;
+                case CurrencyType.Wood:
+                    currencyManager.Wood++;
+                    Destroy(gameObject);
+                    break;
+                case CurrencyType.Rock:
+                    currencyManager.Rock++;
+                    Destroy(gameObject);
+                    break;
+            }
+        }
     }
 }

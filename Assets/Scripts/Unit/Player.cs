@@ -21,6 +21,7 @@ public class Player : Unit
     // Start is called before the first frame update
     void Start()
     {
+        GetBasedStat();
         anim = GetComponent<Animator>();
         units = GetComponent<Unit>();
         rb = GetComponent<Rigidbody>();
@@ -30,6 +31,7 @@ public class Player : Unit
     // Update is called once per frame
     void Update()
     {
+        ChangeWeapons();
         PlayerAttack();
         if (hitCount == 0)
         {

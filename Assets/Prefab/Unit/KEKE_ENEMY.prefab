@@ -25835,6 +25835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1060182419309470281}
   - component: {fileID: 6386303324265168944}
+  - component: {fileID: 5254399456435899483}
   m_Layer: 0
   m_Name: KEKE_ENEMY
   m_TagString: Untagged
@@ -25850,7 +25851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3665868208416118941}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9984579, z: -0, w: -0.0555141}
+  m_LocalRotation: {x: -0, y: -0.9984578, z: 0, w: -0.05551645}
   m_LocalPosition: {x: 62.383793, y: -0.0000009536743, z: 36.55512}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25869,7 +25870,7 @@ Animator:
   m_GameObject: {fileID: 3665868208416118941}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3af6993859af4e647a1f60cb1fee8908, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -25880,6 +25881,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5254399456435899483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3665868208416118941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 276a5a4002aa4194da19cd9787e2c870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  type: 
+  state: 0
+  rb: {fileID: 0}
+  health: 0
+  currentUnitHealth: 0
+  damage: 0
+  currentUnitDamage: 0
+  defense: 0
+  critChance: 0
+  currentUnitCritChance: 0
+  moveSpeed: 0
+  heavyAttackChance: 0
+  currentUnitHeavyAttackChance: 0
+  unitEquipmentId: 0
+  currentWeapon: {fileID: 0}
+  inventoryWeapons: []
 --- !u!1 &3666366942870342568
 GameObject:
   m_ObjectHideFlags: 0
