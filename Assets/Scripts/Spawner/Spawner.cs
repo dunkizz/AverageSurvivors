@@ -9,11 +9,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject[] enemiesToSpawn;
 
     [Header("Item Spawn")] 
-    [SerializeField] private bool spawnItem;
+    [SerializeField] public bool spawnItem;
     [SerializeField] private int[] itemSpawnAmounts; // จำนวนที่กำหนดสำหรับแต่ละไอเท็มใน itemsToSpawn
 
     [Header("Enemies Spawn")] 
-    [SerializeField] private bool spawnEnemies;
+    [SerializeField] public bool spawnEnemies;
     [SerializeField] private int[] enemiesSpawnAmounts; // จำนวนที่กำหนดสำหรับแต่ละศัตรู
 
     void Start()
@@ -37,27 +37,29 @@ public class Spawner : MonoBehaviour
     }
 
     
-    void SpawnItem()
+    public void SpawnItem()
     {
         for (int i = 0; i < itemsToSpawn.Length; i++)
         {
             int amountToSpawn = itemSpawnAmounts[i];
             for (int j = 0; j < amountToSpawn; j++)
             {
-                Instantiate(itemsToSpawn[i], transform.position, Quaternion.identity);
+                Vector3 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0);
+                Instantiate(itemsToSpawn[i], transform.position + randomOffset, Quaternion.identity);
                 Debug.Log($"Spawned Item {i}: {j + 1}/{amountToSpawn}");
             }
         }
     }
 
-    void SpawnEnemies()
+    public void SpawnEnemies()
     {
         for (int i = 0; i < enemiesToSpawn.Length; i++)
         {
             int amountToSpawn = enemiesSpawnAmounts[i];
             for (int j = 0; j < amountToSpawn; j++)
             {
-                Instantiate(enemiesToSpawn[i], transform.position, Quaternion.identity);
+                Vector3 randomOffset = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0);
+                Instantiate(enemiesToSpawn[i], transform.position + randomOffset, Quaternion.identity);
                 Debug.Log($"Spawned Enemy {i}: {j + 1}/{amountToSpawn}");
             }
         }

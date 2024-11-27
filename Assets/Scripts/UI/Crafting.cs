@@ -34,6 +34,7 @@ public class Crafting : MonoBehaviour
     [SerializeField] private bool[] isCrafted;
 
     [Header("ElementNeed")] 
+    [SerializeField] private GameObject craftUI;
     [SerializeField] private Unit playerUnit;
     [SerializeField] private GameObject CraftingPanel;
     [SerializeField] private GameObject RecipePanel;
@@ -52,6 +53,7 @@ public class Crafting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PressToOpenCraft();
         StatRealtime();
         CheckIfCrafted(currentId);
         Debug.Log($"current id : {currentId}");
@@ -165,5 +167,13 @@ public class Crafting : MonoBehaviour
     public void ClickToEquipWeapon()
     {
         playerUnit.UnitEquipmentId = currentId;
+    }
+
+    void PressToOpenCraft()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            craftUI.SetActive(true);
+        }
     }
 }
