@@ -119,7 +119,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  name: 
-  type: 0
+  name: RustySword
+  type: 1
   wepData: {fileID: 11400000, guid: 05da20fbe90e8bc46b8bc128268e7718, type: 2}
   unit: {fileID: 0}
+  weaponDamage: 7
+  weaponSpeed: 7
+  weaponCritChance: 7
+  weaponHeavyAtkChance: 7

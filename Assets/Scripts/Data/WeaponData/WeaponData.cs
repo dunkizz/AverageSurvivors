@@ -12,5 +12,10 @@ public class WeaponData : ScriptableObject
    public float critChance;
    public float heavyAtkChance;
    
+   public WeaponData CreateInstance()
+   {
+      return Instantiate(this);
+   }
+   
 }
 

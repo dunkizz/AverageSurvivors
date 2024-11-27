@@ -118,8 +118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71cb09bb85c719a4e8e9ebd277d8461a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  name: 
-  type: 0
+  id: 2
+  name: CritSword
+  type: 1
   wepData: {fileID: 11400000, guid: 88c993736bc9ba748b3efd278b694087, type: 2}
   unit: {fileID: 0}
+  weaponDamage: 10
+  weaponSpeed: 10
+  weaponCritChance: 50
+  weaponHeavyAtkChance: 15

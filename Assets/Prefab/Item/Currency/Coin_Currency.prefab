@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  name: 
-  type: 0
+  name: Gold
+  type: 2
   currencyManager: {fileID: 0}
   currencyType: 0

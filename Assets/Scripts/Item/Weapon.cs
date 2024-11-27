@@ -6,10 +6,13 @@ using UnityEngine;
 
 public class Weapon : Item
 {
-    [Header("Properties")]
-    [SerializeField]public WeaponData wepData;
     [Header("User")]
     [SerializeField]private Unit unit;
+    [Header("Stats")]
+    public float weaponDamage;
+    public float weaponSpeed;
+    public float weaponCritChance;
+    public float weaponHeavyAtkChance;
     // Dictionary to store weapon data by ID
 
     private void OnEnable()
@@ -17,10 +20,13 @@ public class Weapon : Item
         PlusAndResetStat();
     }
 
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
-       
+        //runTimeWeaponData = wepData.CreateInstance();
     }
 
     // Update is called once per frame
@@ -28,16 +34,9 @@ public class Weapon : Item
     {
         
         //setActiveIfUsing();
-        matchItem();
+        //matchItem();
     }
-
-    void matchItem()
-    {
-        Id = wepData.weaponId;
-        Name = wepData.weaponName;
-        Type = wepData.weaponType;
-    }
-
+    
     void PlusAndResetStat()
     {
         bool isReset = false;
@@ -50,9 +49,9 @@ public class Weapon : Item
         //plus
         if (isReset == true)
         {
-            unit.currentUnitDamage += wepData.damage;
-            unit.currentUnitCritChance += wepData.critChance;
-            unit.currentUnitHeavyAttackChance += wepData.heavyAtkChance;
+            unit.currentUnitDamage += weaponDamage;
+            unit.currentUnitCritChance += weaponCritChance;
+            unit.currentUnitHeavyAttackChance += weaponHeavyAtkChance;
         }
     }
 

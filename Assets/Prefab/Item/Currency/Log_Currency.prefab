@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  name: 
-  type: 0
+  name: Wood
+  type: 2
   currencyManager: {fileID: 0}
   currencyType: 0
 --- !u!1 &7641540239109243641

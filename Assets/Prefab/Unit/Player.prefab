@@ -63101,7 +63101,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 3af6993859af4e647a1f60cb1fee8908, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -63206,7 +63206,7 @@ MonoBehaviour:
   - {fileID: 5733832104981168503}
   maxHit: 4
   canDash: 1
-  dashingSpeed: 120
+  dashingSpeed: 20
   dashingDuration: 0.2
   dashingCooldown: 0.65
   dashTrail: {fileID: 6142296023579888923}
@@ -69717,6 +69717,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1936967885780450779}
     m_Modifications:
+    - target: {fileID: 491717517325733473, guid: 4649d23dfb84b454d91ced7104ed5a6c, type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 4381115696884572963}
     - target: {fileID: 1556867216915445165, guid: 4649d23dfb84b454d91ced7104ed5a6c, type: 3}
       propertyPath: m_LocalScale.x
       value: 100
@@ -69860,6 +69864,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7420474411992550632, guid: 70e768ded786a87458bd218dbd906788, type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 4381115696884572963}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -69943,6 +69951,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2222424400727639388, guid: ac07131cb379c2d439ad1787de4c8971, type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 4381115696884572963}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -70026,6 +70038,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6810099932726590489, guid: 6ee473b481fddb846be4048751b26b6a, type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 4381115696884572963}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

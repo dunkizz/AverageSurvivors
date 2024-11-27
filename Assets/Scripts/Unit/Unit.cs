@@ -74,7 +74,6 @@ public class Unit : MonoBehaviour
 
     public void ChangeWeapons()
     {
-        //plus and reset stat
         //hide every item in inventory
         foreach (GameObject obj in inventoryWeapons)
         {

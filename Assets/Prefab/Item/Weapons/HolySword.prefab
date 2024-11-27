@@ -118,8 +118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71cb09bb85c719a4e8e9ebd277d8461a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  name: 
-  type: 0
+  id: 3
+  name: HolySword
+  type: 1
   wepData: {fileID: 11400000, guid: 516afbf76bd17b04a9b31284478f4c59, type: 2}
   unit: {fileID: 0}
+  weaponDamage: 20
+  weaponSpeed: 20
+  weaponCritChance: 20
+  weaponHeavyAtkChance: 35
