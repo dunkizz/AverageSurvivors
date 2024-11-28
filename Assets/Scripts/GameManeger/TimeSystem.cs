@@ -9,7 +9,7 @@ public class TimeSystem : MonoBehaviour
     [SerializeField]private Light directionalLight;
     [SerializeField]private TextMeshProUGUI timerText;
     [SerializeField]private TextMeshProUGUI timeDescriptionText;
-    [SerializeField]private bool isDay;
+    [SerializeField]public bool isDay;
     [SerializeField]private float timer;
     [Header("Day Time")]
     [SerializeField]private float dayIntensity;

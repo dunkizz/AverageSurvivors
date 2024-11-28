@@ -18,11 +18,7 @@ public class Item : MonoBehaviour
     public string Name { get { return name; } set { name = value; } }
     [SerializeField]protected ItemType type;
     public ItemType Type { get { return type; } set { type = value; } }
-    //[SerializeField]private GameObject[] model;
-    //public GameObject[] Model { get { return model; } set { model = value; } }
-    //[SerializeField]private BoxCollider[] hitBoxes;
-    //public BoxCollider[] HitBoxes { get { return hitBoxes; } set { hitBoxes = value; } }
-    // Start is called before the first frame update
+    
     void Start()
     {
         

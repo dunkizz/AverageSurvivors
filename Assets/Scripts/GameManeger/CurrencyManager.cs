@@ -10,12 +10,15 @@ public class CurrencyManager : MonoBehaviour
     public int Gold{ get { return gold; } set { gold = value; } }
     [SerializeField]private int wood;
     public int Wood{ get { return wood; } set { wood = value; } }
-    [SerializeField]public int rock;
+    [SerializeField]private int rock;
     public int Rock{ get { return rock; } set { rock = value; } }
+    [SerializeField]private int key;
+    public int Key{ get { return key; } set { key = value; } }
     [Header("UI TEXT")]
     [SerializeField]private TextMeshProUGUI GoldText;
     [SerializeField]private TextMeshProUGUI WoodText;
     [SerializeField]private TextMeshProUGUI RockText;
+    [SerializeField]private TextMeshProUGUI KeyText;
     
     // Start is called before the first frame update
     void Start()
@@ -34,5 +37,6 @@ public class CurrencyManager : MonoBehaviour
         GoldText.text = gold.ToString();
         WoodText.text = wood.ToString();
         RockText.text = rock.ToString();
+        KeyText.text = $"{key.ToString()}/3";
     }
 }
