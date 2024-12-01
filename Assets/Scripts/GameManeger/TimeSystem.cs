@@ -14,11 +14,12 @@ public class TimeSystem : MonoBehaviour
     [Header("Day Time")]
     [SerializeField]private float dayIntensity;
     //[SerializeField]private int dMin;
-    [SerializeField]private float dSec;
+    [SerializeField]public float dSec;
     [Header("Night Time")] 
     [SerializeField]private float nightIntensity;
     //[SerializeField]private int nMin;
-    [SerializeField]private float nSec;
+    [SerializeField]public float nSec;
+    [SerializeField]public float currentNsec;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,7 @@ public class TimeSystem : MonoBehaviour
 
     void Timer()
     {
+        currentNsec = nSec - timer;
         if (timer < dSec || timer < nSec)
         {
             timer += Time.deltaTime;

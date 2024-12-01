@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 7770340193624399437}
   - component: {fileID: 6570152456109634937}
   - component: {fileID: 565934287138120444}
-  - component: {fileID: 7132054542578478090}
   - component: {fileID: 7656553051300468441}
   - component: {fileID: 7349026559507453965}
+  - component: {fileID: 1595157201703817364}
   m_Layer: 0
   m_Name: Log_Currency
-  m_TagString: Untagged
+  m_TagString: Currency
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,28 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7132054542578478090
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2416555539822237570}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 5affa7e903710d24b94e5df319d5c1a1, type: 3}
 --- !u!54 &7656553051300468441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,7 +113,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &7349026559507453965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +131,27 @@ MonoBehaviour:
   type: 2
   currencyManager: {fileID: 0}
   currencyType: 0
+--- !u!65 &1595157201703817364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2416555539822237570}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.927957, y: 1.0609536, z: 1.0596808}
+  m_Center: {x: 0.0049319863, y: 0.0023505092, z: 0.0011054277}
 --- !u!1 &7641540239109243641
 GameObject:
   m_ObjectHideFlags: 0

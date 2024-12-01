@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - Enemy
+  - Boss
+  - Currency
   layers:
   - Default
   - TransparentFX

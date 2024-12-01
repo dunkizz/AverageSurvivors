@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3535407933546799441}
   - component: {fileID: 8106109495599202901}
   - component: {fileID: 5830405480644004993}
-  - component: {fileID: 6287133782483524682}
   - component: {fileID: 5668284006583444949}
   - component: {fileID: 1557845559286365911}
+  - component: {fileID: 4702744249346014345}
   m_Layer: 0
   m_Name: Rock_Currency
-  m_TagString: Untagged
+  m_TagString: Currency
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,28 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6287133782483524682
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4120449622359710395}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e396cb8d258c1ec499254be4c7cb9f91, type: 3}
 --- !u!54 &5668284006583444949
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,7 +113,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1557845559286365911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +131,27 @@ MonoBehaviour:
   type: 2
   currencyManager: {fileID: 0}
   currencyType: 0
+--- !u!65 &4702744249346014345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120449622359710395}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.186585, y: 2.505666, z: 1.7212362}
+  m_Center: {x: -0.0070967674, y: 1.2049233, z: 0.050229996}
 --- !u!1 &6857980654682354785
 GameObject:
   m_ObjectHideFlags: 0
