@@ -44,7 +44,14 @@ public class TimeSystem : MonoBehaviour
 
     void Timer()
     {
-        currentNsec = nSec - timer;
+        if (isDay == false)
+        {
+            currentNsec = nSec - timer;
+        }
+        else
+        {
+            currentNsec = nSec;
+        }
         if (timer < dSec || timer < nSec)
         {
             timer += Time.deltaTime;

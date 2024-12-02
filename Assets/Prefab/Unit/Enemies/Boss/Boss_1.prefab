@@ -25838,6 +25838,7 @@ GameObject:
   - component: {fileID: 5254399456435899483}
   - component: {fileID: 2692847742648910488}
   - component: {fileID: 5528100407732921599}
+  - component: {fileID: -159517942173578903}
   m_Layer: 0
   m_Name: Boss_1
   m_TagString: Boss
@@ -25855,7 +25856,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 876517521775914239}
@@ -25912,6 +25913,9 @@ MonoBehaviour:
   unitEquipmentId: 0
   currentWeapon: {fileID: 0}
   inventoryWeapons: []
+  player: {fileID: 0}
+  detectionRadius: 5
+  timeSystem: {fileID: 0}
 --- !u!54 &2692847742648910488
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25960,6 +25964,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.7906015, z: 1}
   m_Center: {x: 0, y: 0.9301791, z: 0}
+--- !u!195 &-159517942173578903
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3665868208416118941}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3666366942870342568
 GameObject:
   m_ObjectHideFlags: 0

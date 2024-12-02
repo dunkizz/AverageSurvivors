@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class WaveTest : MonoBehaviour
 {
+    [Header("Info")]
     [SerializeField] private int enemiesCount;
     [SerializeField] private int maxEnemies;
     [SerializeField] private int bossCount;
     [SerializeField] private int maxBoss;
     [SerializeField] private int currentItemCount;
     [SerializeField] private int maxItems;
-    [SerializeField] private TimeSystem timeSystem;
-    [SerializeField] private float timeForBoss;
+    private TimeSystem timeSystem;
+    private float timeForBoss;
+    private bool bossSpawned;
+    [Header("Prefabs")]
     [SerializeField] private GameObject[] enemies;
     [SerializeField] private GameObject[] boss;
-    [SerializeField] private GameObject player;
+    private GameObject player;
+    [Header("Settings")]
     [SerializeField] private float spawnRadius;
     [SerializeField] private GameObject[] currency;
     [SerializeField] private GameObject[] currencySpawnPoints;
@@ -24,6 +28,7 @@ public class WaveTest : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         timeSystem = FindObjectOfType<TimeSystem>();
         timeForBoss = timeSystem.nSec / 2;
+        bossSpawned = false;
     }
 
     // Update is called once per frame
@@ -41,6 +46,7 @@ public class WaveTest : MonoBehaviour
 
         if (timeSystem.isDay == true)
         {
+            bossSpawned = false;
             DayWave();
         }
     }
@@ -55,21 +61,18 @@ public class WaveTest : MonoBehaviour
         
         if (enemiesCount < maxEnemies)
         {
-            Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity); 
+                Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity); 
         }
 
-        if (timeSystem.currentNsec <= timeForBoss && bossCount < maxBoss)
+        if (!bossSpawned && timeSystem.currentNsec <= timeForBoss && bossCount < maxBoss)
         {
-            Instantiate(boss[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
+            Instantiate(boss[Random.Range(0, boss.Length)], spawnPos, Quaternion.identity);
+            bossSpawned = true;
         }
         
     }
     void DayWave()
     {
-       
-        // 1.RANDOM POSITION OF DROPZONE
-        // 2.EVERY DROPZONE MUST INSTANIATE RANDOM ITEMS
-        // 3.RANDOM ITEM
         foreach (GameObject spawnPoint in currencySpawnPoints)
         {
             if (spawnPoint != null && currentItemCount < maxItems)
@@ -84,11 +87,17 @@ public class WaveTest : MonoBehaviour
 
                 // Randomly pick an item from the currency array
                 GameObject randomItem = currency[Random.Range(0, currency.Length)];
-
-                // Instantiate the random item at the calculated random position
+                
                 Instantiate(randomItem, randomPosition, Quaternion.identity);
+                currentItemCount++;
+                if (currentItemCount >= maxItems)
+                {
+                    break;
+                }
             }
         }
         
     }
+
+   
 }
