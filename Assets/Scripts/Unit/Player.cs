@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,12 @@ public class Player : Unit
     [SerializeField]private float dashingDuration = 0.3f;
     [SerializeField]private float dashingCooldown = 0.65f;
     [SerializeField]private TrailRenderer dashTrail;
+
+    [Header("State")] 
+    [SerializeField] private bool isMoving;
+    [SerializeField] private bool isDashing;
+    [SerializeField] private bool isAttacking;
+    [SerializeField] private bool isDie;
     
     // Start is called before the first frame update
     void Start()
@@ -31,33 +38,45 @@ public class Player : Unit
     // Update is called once per frame
     void Update()
     {
-        ChangeWeapons();
-        PlayerAttack();
-        if (hitCount == 0)
+        if (currentUnitHealth <= 0)
         {
-            PlayerMovement();
-            Dashing();
+            Dead();
         }
+        if (!Input.anyKey && currentUnitHealth > 0)
+        {
+            SetState(UnitState.Idle);
+        }
+        
+        ChangeWeapons();
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (State == UnitState.Idle || State == UnitState.Moving)
+            {
+                PlayerAttack();
+            }
+        }
+        
+        
+        PlayerMovement();
+        Dashing();
+        
         
     }
 
     void PlayerAttack()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
             SetState(UnitState.Attack);
             
             hitCount++;
-            anim.SetInteger("attackInt", hitCount);
             StartCoroutine(attackDuration());
             
             Debug.Log($"Hit : {hitCount}");
             if (hitCount >= maxHit)
             {
-                anim.SetInteger("attackInt",0);
+                //anim.SetInteger("attackInt",0);
                 hitCount = 0;
             }
-        }
+        
     }
 
     void PlayerMovement()
@@ -67,7 +86,7 @@ public class Player : Unit
         Vector3 movement = new Vector3(horizontal, 0.0f, vertical);
 
         // Check if there is movement input
-        if (movement.magnitude > 0.1f)
+        if (movement.magnitude > 0.1f && units.currentUnitHealth > 0)
         {
             // Only update rotation if there is movement
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement.normalized), 0.2f);
@@ -76,15 +95,12 @@ public class Player : Unit
                 SetState(UnitState.Moving);
             }
         }
-        else if (movement.magnitude < 0.1f && canDash == true)
-        {
-            SetState(UnitState.Idle);
-        }
 
         // Move the character
-        transform.Translate(movement * units.MoveSpeed * Time.deltaTime, Space.World);
-        
-        
+        if (units.currentUnitHealth > 0)
+        {
+            transform.Translate(movement * units.MoveSpeed * Time.deltaTime, Space.World);
+        }
     }
 
     void Dashing()
@@ -115,8 +131,25 @@ public class Player : Unit
     {
         if (hitCount != hitCount+1)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             hitCount = 0;
+        }
+    }
+
+    private void HeavyAttack()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy")||other.CompareTag("Boss"))
+        {
+            if (State == UnitState.Attack)
+            {
+                Enemy enemy = other.GetComponent<Enemy>();
+                enemy.currentUnitHealth -= currentUnitDamage;
+            }
         }
     }
 }

@@ -13,11 +13,25 @@ public class Weapon : Item
     public float weaponSpeed;
     public float weaponCritChance;
     public float weaponHeavyAtkChance;
+    [SerializeField]private BoxCollider HitBox;
     // Dictionary to store weapon data by ID
 
     private void OnEnable()
     {
         PlusAndResetStat();
+    }
+
+    void TurnOnHitBox()
+    {
+        if (unit.State == UnitState.Attack)
+        {
+            HitBox.isTrigger = true;
+        }
+
+        if (unit.State != UnitState.Attack)
+        {
+            HitBox.enabled = false;
+        }
     }
 
     
@@ -26,13 +40,14 @@ public class Weapon : Item
     // Start is called before the first frame update
     void Start()
     {
-        //runTimeWeaponData = wepData.CreateInstance();
+        HitBox = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        HitBox.enabled = false;
+        //TurnOnHitBox();
         //setActiveIfUsing();
         //matchItem();
     }
@@ -53,9 +68,13 @@ public class Weapon : Item
             unit.currentUnitCritChance += weaponCritChance;
             unit.currentUnitHeavyAttackChance += weaponHeavyAtkChance;
         }
+        
     }
 
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 }
 
 

@@ -32,6 +32,9 @@ public class Crafting : MonoBehaviour
     [SerializeField] private int[] rockCostsUpgrade;
     [SerializeField] private bool[] isCraftable;
     [SerializeField] private bool[] isCrafted;
+    [Header("Image")]
+    [SerializeField]private Image[] itemImage;
+    [SerializeField]private Image displayImage;
 
     [Header("ElementNeed")] 
     [SerializeField] private GameObject craftUI;
@@ -43,6 +46,7 @@ public class Crafting : MonoBehaviour
     [SerializeField] private Button equipButton;
     [SerializeField] private int currentId;
     
+    
     public float[] currentWeaponDamage;
     // Start is called before the first frame update
     void Start()
@@ -53,6 +57,7 @@ public class Crafting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        displayImage.sprite = itemImage[currentId].sprite;
         PressToOpenCraft();
         StatRealtime();
         CheckIfCrafted(currentId);

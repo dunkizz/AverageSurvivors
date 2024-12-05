@@ -21,9 +21,9 @@ public class Unit : MonoBehaviour
     [SerializeField]protected Rigidbody rb;
     
     [Header("Status")]
-    [SerializeField]private int health;
-    public int Health { get { return health; } set { health = value; } }
-    public int currentUnitHealth;
+    [SerializeField]private float health;
+    public float Health { get { return health; } set { health = value; } }
+    public float currentUnitHealth;
     [SerializeField]private float damage;
     public float Damage { get { return damage; } set { damage = value; } }
     [SerializeField]public float currentUnitDamage;
@@ -58,10 +58,11 @@ public class Unit : MonoBehaviour
         
     }
 
-    void Dead()
+    public void Dead()
     {
-        
+        SetState(UnitState.Die);
     }
+    
 
     void animation()
     {
@@ -103,6 +104,14 @@ public class Unit : MonoBehaviour
         currentUnitDamage = damage;
         currentUnitCritChance = critChance;
         currentUnitHeavyAttackChance = heavyAttackChance;
+    }
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
+        if (health <= 0)
+        {
+            Dead();
+        }
     }
 
 }

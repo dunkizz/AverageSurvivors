@@ -63149,6 +63149,7 @@ GameObject:
   - component: {fileID: 7855139055547582170}
   - component: {fileID: 4381115696884572963}
   - component: {fileID: 6142296023579888923}
+  - component: {fileID: 2846691277473721694}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -63299,6 +63300,10 @@ MonoBehaviour:
   dashingDuration: 0.2
   dashingCooldown: 0.65
   dashTrail: {fileID: 6142296023579888923}
+  isMoving: 0
+  isDashing: 0
+  isAttacking: 0
+  isDie: 0
 --- !u!96 &6142296023579888923
 TrailRenderer:
   serializedVersion: 3
@@ -63412,6 +63417,27 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!65 &2846691277473721694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8241899010581738297}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.8675165, y: 2.0287046, z: 2.6700559}
+  m_Center: {x: -0.07406092, y: 1.127042, z: 0.6970632}
 --- !u!1 &8245061723458113514
 GameObject:
   m_ObjectHideFlags: 0

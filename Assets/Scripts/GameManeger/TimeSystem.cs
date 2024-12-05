@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeSystem : MonoBehaviour
 {
@@ -20,6 +22,10 @@ public class TimeSystem : MonoBehaviour
     //[SerializeField]private int nMin;
     [SerializeField]public float nSec;
     [SerializeField]public float currentNsec;
+    [Header("Image")]
+    [SerializeField]private Image image;
+
+    [SerializeField] private Sprite[] sprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +40,12 @@ public class TimeSystem : MonoBehaviour
         //Clock
         if (isDay)
         {
+            image.sprite = sprite[0];
             SecToMin(dSec - timer); // Countdown for day time
         }
         else
         {
+            image.sprite = sprite[1];
             SecToMin(nSec - timer); // Countdown for night time
         }
     }
